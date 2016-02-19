@@ -1,0 +1,35 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  position: relative;
+  margin: 0; }
+  body .contain {
+    text-align: center; }
+    body .contain .block {
+      margin: 10px auto;
+      width: 90%;
+      height: 385px;
+      background: lightskyblue;
+      font-size: 20px;
+      color: white; }
+    body .contain .visible {
+      opacity: 0; }
+  body #layer {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.2;
+    visibility: hidden; }
+    body #layer .alert {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 300px;
+      margin-top: -150px;
+      margin-left: -150px; }
+
+/*# sourceMappingURL=style.css.map */

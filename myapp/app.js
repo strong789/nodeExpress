@@ -1,7 +1,9 @@
 var express = require('express');
 var path = require('path');
-var mongoStore = require('connect-mongo')(express);
-var settings = require('./setting');
+var session = require('express-session')
+//var mongoStore = require('connect-mongo')(session);
+//var settings = require('./setting');
+var methodOverride = require('method-override')
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -20,12 +22,20 @@ app.set('view engine', 'html');// app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.methodOverride());
+app.use(methodOverride('_method'));
+//app.use(express.methodOverride());
 
 //app.use('/', routes);
 //app.get('/users', usersRouter);
