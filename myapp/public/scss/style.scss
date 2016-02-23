@@ -3,18 +3,43 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   position: relative;
   margin: 0;
+  background: #EEEEEE;
+  text-align: center;
+  color: white;
+  .fixHead{
+     height: 50px;
+     width: 100%;
+     background: cornflowerblue;
+     position: fixed;
+     top: 0;
+     z-index: 999999;
+     -webkit-box-shadow:0 2px 1px rgba(64, 77, 108, .2);  
+     -moz-box-shadow:0 2px 1px rgba(64, 77, 108, .2);  
+     box-shadow:0 2px 1px rgba(64, 77, 108, .2);  
+  }
   .contain{
-      text-align: center;
+     margin-top: 60px; 
     .block{
       margin: 10px auto;
       width: 90%;
       height: 385px;
       background: lightskyblue;
+      border: gainsboro solid 1px;
       font-size: 20px;
-      color: white;
+      opacity: 0;
     }
     .visible{
-        opacity: 0;
+//    animation: myfirst 1s;
+//    -moz-animation: myfirst 1s; /* Firefox */
+//    -webkit-animation: myfirst 1s;  /* Safari 和 Chrome */
+//    -o-animation: myfirst 1s;   /* Opera */
+      opacity: 1;
+      
+      -webkit-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -moz-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -ms-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -o-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
     }
   }
   #layer{
@@ -38,4 +63,26 @@ body {
       }
   }
 }
-
+//@keyframes myfirst
+//{
+//from {opacity: 0;}
+//to {opacity: 1;}
+//}
+//
+//@-moz-keyframes myfirst /* Firefox */
+//{
+//from {opacity: 0;}
+//to {opacity: 1;}
+//}
+//
+//@-webkit-keyframes myfirst /* Safari 和 Chrome */
+//{
+//from {opacity: 0;}
+//to {opacity: 1;}
+//}
+//
+//@-o-keyframes myfirst /* Opera */
+//{
+//from {opacity: 0;}
+//to {opacity: 1;}
+//}

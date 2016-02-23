@@ -1,18 +1,37 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   position: relative;
-  margin: 0; }
+  margin: 0;
+  background: #EEEEEE;
+  text-align: center;
+  color: white; }
+  body .fixHead {
+    height: 50px;
+    width: 100%;
+    background: cornflowerblue;
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+    -webkit-box-shadow: 0 2px 1px rgba(64, 77, 108, 0.2);
+    -moz-box-shadow: 0 2px 1px rgba(64, 77, 108, 0.2);
+    box-shadow: 0 2px 1px rgba(64, 77, 108, 0.2); }
   body .contain {
-    text-align: center; }
+    margin-top: 60px; }
     body .contain .block {
       margin: 10px auto;
       width: 90%;
       height: 385px;
       background: lightskyblue;
+      border: gainsboro solid 1px;
       font-size: 20px;
-      color: white; }
-    body .contain .visible {
       opacity: 0; }
+    body .contain .visible {
+      opacity: 1;
+      -webkit-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -moz-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -ms-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      -o-transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+      transition: opacity 1s cubic-bezier(0.694, 0.0482, 0.335, 1); }
   body #layer {
     position: absolute;
     z-index: 1;

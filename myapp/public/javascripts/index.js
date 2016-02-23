@@ -19,17 +19,28 @@ function disappear(event){
 (function(){
 	var wscrollTop=$(window).scrollTop();
 	if(wscrollTop === 0){
-		$(".block:eq(0)").removeClass('visible');
-		$(".block:eq(1)").removeClass('visible');
+		$(".block:eq(0)").addClass('visible');
+		$(".block:eq(1)").addClass('visible');
+		$(".block:eq(0)").css('opacity','1');
+		$(".block:eq(1)").css('opacity','1');
 	}
 })();
 $(window).scroll(function(){
-	var containH=$('.contain').height();
 	var windowH=$(window).height();
 	var scrollTop=$(window).scrollTop();
 	var totalH=windowH+scrollTop;
-	var num = totalH/405+0.2;
-	num = Math.round(num)-1;
-	console.log(num);
-	$(".block:eq("+num+")").removeClass('visible');
+	var topGap =  scrollTop/405;
+	var num =topGap-Math.round(topGap);
+	topGap = Math.round(topGap);
+	if(topGap != 0.5){
+		for(var i = 0;i<2;i++){
+			$(".block:eq("+(topGap+i)+")").addClass('visible');
+			$(".block:eq("+(topGap+i)+")").css('opacity','1');
+		}
+	}else{
+		for(var i = 0;i<3;i++){
+			$(".block:eq("+(topGap+i)+")").addClass('visible');
+			$(".block:eq("+(topGap+i)+")").css('opacity','1');
+		}	
+	}
 });
